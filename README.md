@@ -1,1 +1,2 @@
-# Projet-_r-capitulatif-Machine_Learning
+# Projet récapitulatif - Machine Learning
+# Equipe : Benji, Cédric, Emad, Steven

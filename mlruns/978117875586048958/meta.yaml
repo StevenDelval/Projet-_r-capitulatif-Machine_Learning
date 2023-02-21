@@ -1,0 +1,6 @@
+artifact_location: file:///home/apprenant/Bureau/briefs/Projet-_r-capitulatif-Machine_Learning/mlruns/978117875586048958
+creation_time: 1676993471873
+experiment_id: '978117875586048958'
+last_update_time: 1676993471873
+lifecycle_stage: active
+name: StackingRegressor

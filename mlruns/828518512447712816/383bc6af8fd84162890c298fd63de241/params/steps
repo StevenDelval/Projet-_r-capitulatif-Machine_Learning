@@ -1,6 +1,0 @@
-[('enc', ColumnTransformer(transformers=[('var', StandardScaler(),
-                                 Index(['duration_ms', 'explicit', 'is_local', 'track_number', 'danceability',
-       'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness',
-       'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms.1',
-       'time_signature'],
-      dtype='object'))])), ('poly', PolynomialFeatures()), ('model', Lasso())]

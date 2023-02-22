@@ -1,0 +1,15 @@
+artifact_uri: file:///home/apprenant/Bureau/briefs/Projet-_r-capitulatif-Machine_Learning/mlruns/451013523690888755/d9a7bf000a8a4c71adf7413fe738a85b/artifacts
+end_time: 1677056643976
+entry_point_name: ''
+experiment_id: '451013523690888755'
+lifecycle_stage: active
+run_id: d9a7bf000a8a4c71adf7413fe738a85b
+run_name: StackingRegressor
+run_uuid: d9a7bf000a8a4c71adf7413fe738a85b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677056641537
+status: 3
+tags: []
+user_id: apprenant

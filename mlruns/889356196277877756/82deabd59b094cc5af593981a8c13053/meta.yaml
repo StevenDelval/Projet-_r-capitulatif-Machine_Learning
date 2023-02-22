@@ -1,0 +1,15 @@
+artifact_uri: file:///home/apprenant/Bureau/briefs/Projet-_r-capitulatif-Machine_Learning/mlruns/889356196277877756/82deabd59b094cc5af593981a8c13053/artifacts
+end_time: 1677056768487
+entry_point_name: ''
+experiment_id: '889356196277877756'
+lifecycle_stage: active
+run_id: 82deabd59b094cc5af593981a8c13053
+run_name: Ridge
+run_uuid: 82deabd59b094cc5af593981a8c13053
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677056765951
+status: 3
+tags: []
+user_id: apprenant

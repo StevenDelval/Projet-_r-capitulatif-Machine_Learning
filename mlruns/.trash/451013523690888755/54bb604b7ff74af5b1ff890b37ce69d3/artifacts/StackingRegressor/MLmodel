@@ -1,0 +1,19 @@
+artifact_path: StackingRegressor
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.2.1
+mlflow_version: 2.1.1
+model_uuid: 234e3a8d40594dedb880760a4342d45c
+run_id: 54bb604b7ff74af5b1ff890b37ce69d3
+utc_time_created: '2023-02-22 09:04:04.021080'

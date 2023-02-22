@@ -1,0 +1,15 @@
+artifact_uri: file:///home/apprenant/Bureau/briefs/Projet-_r-capitulatif-Machine_Learning/mlruns/889356196277877756/38a1f4a4425e4e3691fb9a85f275115b/artifacts
+end_time: 1677057244416
+entry_point_name: ''
+experiment_id: '889356196277877756'
+lifecycle_stage: active
+run_id: 38a1f4a4425e4e3691fb9a85f275115b
+run_name: Lasso
+run_uuid: 38a1f4a4425e4e3691fb9a85f275115b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677057240470
+status: 3
+tags: []
+user_id: apprenant

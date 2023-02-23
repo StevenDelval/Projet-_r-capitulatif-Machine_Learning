@@ -9,3 +9,4 @@ pandas-profiling==3.6.6
 missingno
 numpy==1.23.5
 xgboost
+fastapi

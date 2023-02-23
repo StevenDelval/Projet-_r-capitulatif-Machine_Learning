@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  {% if max_labels == 'Positive' %}
+  <h1 style="color:rgb(44, 44, 90); font-weight: 700;">
+    <i class="fa-solid fa-face-laugh-beam"></i> RESULTS : {{x}} ({{max_data|safe}} %)
+  </h1>
+
+  {% elif max_labels == 'Negative' %}
+  <h1 style="color:rgb(216, 6, 52); font-weight: 700;">
+    <i class="fa-solid fa-face-angry"></i> RESULTS : {{max_labels|safe}} ({{max_data|safe}} %)
+  </h1>
+
+  {% elif max_labels == 'Neutral' %}
+  <h1 style="color:rgb(11, 78, 84); font-weight: 700;">
+    <i class="fa-solid fa-face-meh-blank"></i> RESULTS : {{max_labels|safe}} ({{max_data|safe}} %)
+  </h1>
+
+  {% endif %}
+
+   <div class="container">
+
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-body">
+              <h3 style="color:rgb(44, 44, 90); font-weight: 700;">
+                <i class="fa-solid fa-cloud"></i> WORD CLOUD </h3>
+              <img class="card-img-top" src="{% static 'base/images/mypic.png' %}" alt="Card image-top"> 
+              <p></p>
+              <a href="{% static 'base/images/mypic.png' filename='CF.pdf' %}" class="btn btn-primary">Download cloud image</a>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="card-body">
+              <h3 style="color:rgb(44, 44, 90); font-weight: 700;">
+                <i class="fa-solid fa-square-poll-vertical"></i> Sentimental analysis </h3>
+                  <div class="CharBox">
+                    <canvas id="myChart"></canvas>
+                    <script>
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    const myChart = new Chart(ctx, {
+                        type: 'polarArea', 
+                        data: {
+                            labels: {{labels|safe}},
+                            datasets: [{
+                                label: "legende",
+                                data: {{data|safe}},
+                                backgroundColor: [
+                                    'rgba(75, 192, 192, 0.5)',
+                                    'rgba(255, 99, 132, 0.5)',
+                                    'rgba(255, 206, 86, 0.5)'                        
+                                ],
+                                borderColor: [
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(255, 206, 86, 1)' 
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                          
+                            }
+                        }
+                    );
+                    </script>
+                  </div>
+                  <p> </p>
+                  <div class="card-footer">
+                      <small class="text-muted"><font color="red">Warning : </font> This analysis was performed on the {{n}} first characters of the tweets retrieved and classified according to the number of likes (from most liked to least liked)</small>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p></p>
+<h1 style="color:rgb(44, 44, 90); font-weight: 700;">
+  <i class="fa-solid fa-thumbs-up"></i> TWEETS MOST LIKED
+</h1>
+<p></p>
+
+<div class="card-deck">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa-solid fa-heart"></i> {{tweet_1_Like}}
+      <i class="fa-solid fa-comment"></i> {{tweet_1_Replay}}
+      <i class="fa-solid fa-retweet"></i>{{tweet_1_Retweet}}
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title special-card">
+        <i class="fa-brands fa-twitter"></i>@{{tweet_1_User}}
+      </h5>
+      <p class="card-text">{{tweet_1_Tweet}}</p>
+      <a href={{tweet_1_Url}}>See the tweet in Twitter</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{tweet_1_date}}</small>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <i class="fa-solid fa-heart"></i> {{tweet_2_Like}}
+      <i class="fa-solid fa-comment"></i> {{tweet_2_Replay}}
+      <i class="fa-solid fa-retweet"></i>{{tweet_2_Retweet}}
+    </div>
+    
+    <div class="card-body">
+      <h5 class="card-title special-card">
+        <i class="fa-brands fa-twitter"></i> @{{tweet_2_User}}
+      </h5>
+      <p class="card-text">{{tweet_2_Tweet}}</p>
+      <a href={{tweet_2_Url}}>See the tweet in Twitter</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{tweet_2_date}}</small>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <i class="fa-solid fa-heart"></i> {{tweet_3_Like}}
+      <i class="fa-solid fa-comment"></i> {{tweet_3_Replay}}
+      <i class="fa-solid fa-retweet"></i>{{tweet_3_Retweet}}
+    </div>
+    
+    <div class="card-body">
+      <h5 class="card-title special-card">
+        <i class="fa-brands fa-twitter"></i>@{{tweet_3_User}}
+      </h5>
+      <p class="card-text">{{tweet_3_Tweet}}</p>
+      <a href={{tweet_3_Url}}>See the tweet in Twitter</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{tweet_3_date}}</small>
+    </div>
+  </div>
+</div>
+
+
+
+
+<p></p>
+<p></p>
+<p></p>
+
+
+
+<p></p>
+
+{% if radio_yes == 'Yes' %}
+<h1 style="color:rgb(44, 44, 90); font-weight: 700;">
+  <i class="fa-solid fa-code-compare"></i> Compare results from the same period last year
+</h1>
+<p></p>
+
+
+<div class="card text-center">
+  {% comment %} <div class="card-header">
+    Compare results from the same period last year
+  </div> {% endcomment %}
+  <div class="card-body">
+    {% comment %} <h5 class="card-title">Special title treatment</h5> {% endcomment %}
+    <img class="card-img-top" src="{% static 'base/images/copmared_365_days.png' %}" alt="Card image-top"> 
+  </div>
+  <div class="card-footer text-muted">
+    <small class="text-muted">This graphic compares the sentiment analysis in period {{phrase}} and the period {{phrase_365}}. 
+      Be carefull, you may not find any Tweet for the same query 365 ago.
+    </small>
+  </div>
+</div>
+{% endif %}
+
+<p></p>
+<p></p>
+<p></p>
+
+
+
+<p></p>
+<h4 style="color:rgb(44, 44, 90); font-weight: 700; display: flex; justify-content: space-between">
+     <a href="{% url 'tweeter_scrape' %}"><i class="fa-solid fa-angles-left"></i> Back</a> <a href="#"><i class="fa-solid fa-angles-up"></i> Go to top</a>
+</h4>
+
+
+
+{% endblock content %}

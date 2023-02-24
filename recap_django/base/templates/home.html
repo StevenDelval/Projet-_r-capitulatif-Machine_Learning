@@ -36,14 +36,6 @@
     height: 260px;
   }
   .special-card {
-    {% comment %} /* create a custom class so you 
-       do not run into specificity issues 
-       against bootstraps styles
-       which tends to work better than using !important 
-       (future you will thank you later)*/ {% endcomment %}
-    
-      {% comment %} background-color: rgba(245, 245, 245, 1); {% endcomment %}
-      {% comment %} opacity: .4; {% endcomment %}
       text-align : left;
       color : rgb(29, 161, 242);
     }
@@ -53,38 +45,12 @@
       font-weight: 700;
       text-align: center;
     }
+    
+
+
   </style> 
 </head>
 
-
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>Home page</title>
-
-  <script src="https://kit.fontawesome.com/8f51521eb7.js" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <style>
-    .center {
-      position: absolute;
-      text-align: center;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: rgb(230, 239, 245);
-    }
-  </style>
-</head>
-
-
-
-<body class="center" > -->
 
 
     {% load static %}
@@ -108,11 +74,23 @@
           <!-- all_words -->
             <div class="col-md">
               <div class="form-floating">
-                <label for="floatingInputGrid">80s song you want to search for</label>
-                <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ex: Take On Me*" name="all_words" required>
+                <label for="floatingInputGrid">Track Name</label>
+                <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ex: Take On Me*" name="Track_Name" required>
               </div>
             </div>
     
+
+               
+          <!-- all_words -->
+          <div class="col-md">
+            <div class="form-floating">
+              <label for="floatingInputGrid">Artiste Name</label>
+              <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ex: Red Hot Chili Peppers*" name="Artiste_Name" required>
+            </div>
+          </div>
+  
+
+
         </div>
         <p></p>
 

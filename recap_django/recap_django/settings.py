@@ -7,40 +7,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/topics/settings/
 """
 
-import dj_database_url
+#import dj_database_url
 import os
 from django.test.runner import DiscoverRunner
 from pathlib import Path
 
 
-IS_HEROKU = "DYNO" in os.environ
-
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-
-if not IS_HEROKU:
-    from dotenv import load_dotenv
-    load_dotenv()
-
-#if 'SECRET_KEY' in os.environ:
-#    SECRET_KEY = os.environ["SECRET_KEY"]
-SECRET_KEY = '0000'
-
-# Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
-if IS_HEROKU:
-    ALLOWED_HOSTS = ["*"]
-else:
-    ALLOWED_HOSTS = []
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-2=p)b=1m)*@6&r5#bihf(w464ldc#1^@z)kpl731zrlxq1pa3('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if not IS_HEROKU:
-    DEBUG = True
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -102,14 +88,50 @@ DATABASES = {
     }
 }
 
-if "DATABASE_URL" in os.environ:
-    # Configure Django for DATABASE_URL environment variable.
-    DATABASES["default"] = dj_database_url.config(
-        conn_max_age=MAX_CONN_AGE, ssl_require=True)
 
-    # Enable test database if found in CI environment.
-    if "CI" in os.environ:
-        DATABASES["default"]["TEST"] = DATABASES["default"]
+
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+DB_USERNAME = os.getenv('POSTGRES_USER')
+DB_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+DB_DATABASE = os.getenv('POSTGRES_DB')
+DB_HOST = os.getenv('POSTGRES_HOST')
+DB_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_AVAILABLE = all(   #use any name in place of POSTGRES_AVAILABLE
+    [DB_USERNAME,
+    DB_PASSWORD,
+    DB_DATABASE,
+    DB_HOST,
+    DB_PORT]
+)
+
+POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
+
+if POSTGRES_AVAILABLE and POSTGRES_RDY:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_DATABASE,
+        'USER': DB_USERNAME,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+    }
+}  
+
+
+
+
+
+
 
 
 # Password validation

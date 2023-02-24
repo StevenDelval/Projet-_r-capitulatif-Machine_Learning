@@ -1,0 +1,6 @@
+django-widget-tweaks
+django-crispy-forms
+django
+whitenoise
+psycopg2-binary
+spotipy

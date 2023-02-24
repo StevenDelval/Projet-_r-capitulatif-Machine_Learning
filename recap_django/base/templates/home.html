@@ -1,0 +1,111 @@
+
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Result</title>
+
+  <script src="https://kit.fontawesome.com/8f51521eb7.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+  .center {
+    text-align : center;
+    margin-top: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(230, 239, 245);
+    padding: 10px; 
+  }
+  .CharBox{
+    text-align : center;
+    width: 400px;
+    height: 260px;
+  }
+  .special-card {
+      text-align : left;
+      color : rgb(29, 161, 242);
+    }
+
+    p {
+      color: rgb(51, 51, 83);
+      font-weight: 700;
+      text-align: center;
+    }
+    
+
+
+  </style> 
+</head>
+
+
+
+    {% load static %}
+    
+    
+    <main>
+      
+    
+      <h1 style="color:rgb(44, 44, 90); font-weight: 700;">
+        <i class="fa-sharp fa-solid fa-music"></i> Spotify
+      </h1>
+    
+      <p >
+        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla 
+      </p>
+    
+      <form action="result">
+        {% csrf_token %}
+        <div class="row g-2">
+    
+          <!-- all_words -->
+            <div class="col-md">
+              <div class="form-floating">
+                <label for="floatingInputGrid">Track Name</label>
+                <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ex: Take On Me*" name="Track_Name" required>
+              </div>
+            </div>
+    
+
+               
+          <!-- all_words -->
+          <div class="col-md">
+            <div class="form-floating">
+              <label for="floatingInputGrid">Artiste Name</label>
+              <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ex: Red Hot Chili Peppers*" name="Artiste_Name" required>
+            </div>
+          </div>
+  
+
+
+        </div>
+        <p></p>
+
+     
+        <input class="btn btn-primary btn-lg btn-block" type="submit" value='Submit'>
+    
+      </form>
+    
+    
+      {% comment %} <a href="{% url 'home' %}"> <i class="fa-solid fa-angles-left"></i> Back to Home </a>
+     {% endcomment %}
+    
+    </main>
+</body>
+
+</html>
+
+{% endblock content %}

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+# Cédric
+data-in/
+data-out/
+
+>>>>>>> 67680d907520f7d035dbc79bf0092c9b0f10a001
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
@@ -171,4 +178,7 @@ poetry.toml
 .ruff_cache/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+<<<<<<< HEAD
 .cache
+=======
+>>>>>>> 67680d907520f7d035dbc79bf0092c9b0f10a001

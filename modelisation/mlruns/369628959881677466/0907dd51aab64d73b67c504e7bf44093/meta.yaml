@@ -1,0 +1,15 @@
+artifact_uri: file:///home/apprenant/Bureau/briefs/Projet-_r-capitulatif-Machine_Learning/mlruns/369628959881677466/0907dd51aab64d73b67c504e7bf44093/artifacts
+end_time: 1677057968723
+entry_point_name: ''
+experiment_id: '369628959881677466'
+lifecycle_stage: active
+run_id: 0907dd51aab64d73b67c504e7bf44093
+run_name: ElasticNet
+run_uuid: 0907dd51aab64d73b67c504e7bf44093
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677057965420
+status: 3
+tags: []
+user_id: apprenant

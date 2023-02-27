@@ -1,0 +1,26 @@
+
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="nav-link px-2 link-secondary">
+        <svg class="bi me-2" width="100" height="10" role="img" aria-label="Bootstrap"><i class="fa-sharp fa-solid fa-house fa-2xl"></i></svg>
+      </a>
+  
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary mr-4">Spotify</a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark">About</a></li>
+      </ul>
+
+        <div class="col-md-3 text-end">
+          {% if user.is_authenticated %}
+            <span class="navbar-text"> Logged as : {{user.get_username}}</span>
+            <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}?next={{request.path}}">log out</a>
+            {% else %}
+              <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Login</a>
+              <a href="{% url 'signup' %}" class="btn btn-primary">Sign-up</a>
+            {% endif %}
+
+        
+      </div>
+    </header>
+  </div>

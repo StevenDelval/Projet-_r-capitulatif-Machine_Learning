@@ -26,132 +26,157 @@
 
 
 
-<h1>{{ track_name }}, Popularity :{{popularity}}</h1>
 
 
-<button id="detailsButton" onclick="toggleDetails()">Show Details</button>
+<div class="col">
+    <div class="card shadow-sm">
+      <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <div class="card-body">
 
-<div id="detailsTable" style="display: none;">
+        <h1>{{ track_dict_list.0.track_name }}, Popularity: {{ track_dict_list.0.popularity }}</h1>
 
-    
-    
-    
-    <table>
-        <tr>
-        <th>Variable Name</th>
-        <th>Value</th>
-    </tr>
-    <tr>
-        <td>Artist Name</td>
-        <td>{{ artist_name }}</td>
-    </tr>
-    <tr>
-        <td>Album Name</td>
-        <td>{{ album_name }}</td>
-    </tr>
-    <tr>
-        <td>Album ID</td>
-        <td>{{ album_id }}</td>
-    </tr>
-    <tr>
-        <td>Release Date</td>
-        <td>{{ release_date }}</td>
-    </tr>
-    <tr>
-        <td>Track Name</td>
-        <td>{{ track_name }}</td>
-    </tr>
-    <tr>
-        <td>Track ID</td>
-        <td>{{ track_id }}</td>
-    </tr>
-    <tr>
-        <td>Popularity</td>
-        <td>{{ popularity }}</td>
-    </tr>
-    <tr>
-        <td>Duration (ms)</td>
-        <td>{{ duration_ms }}</td>
-    </tr>
-    <tr>
-        <td>Explicit</td>
-        <td>{{ explicit }}</td>
-    </tr>
-    <tr>
-        <td>External URLs</td>
-        <td>{{ external_urls }}</td>
-    </tr>
-    <tr>
-        <td>Is Local</td>
-        <td>{{ is_local }}</td>
-    </tr>
-    <tr>
-        <td>Preview URL</td>
-        <td><audio id="myAudio" controls preload="auto" src="{{ preview_url }}"></audio></td>
-    </tr>
-    <tr>
-        <td>Track Number</td>
-        <td>{{ track_number }}</td>
-    </tr>
-    
-    <tr>
-        <td>Danceability</td>
-        <td>{{ danceability }}</td>
-    </tr>
-    <tr>
-        <td>Energy</td>
-        <td>{{ energy }}</td>
-    </tr>
-    <tr>
-        <td>Key</td>
-        <td>{{ key }}</td>
-    </tr>
-    <tr>
-        <td>Loudness</td>
-        <td>{{ loudness }}</td>
-    </tr>
-    <tr>
-        <td>Mode</td>
-        <td>{{ mode }}</td>
-    </tr>
-    <tr>
-        <td>Speechiness</td>
-        <td>{{ speechiness }}</td>
-    </tr>
-    <tr>
-        <td>Acousticness</td>
-        <td>{{ acousticness }}</td>
-    </tr>
-    <tr>
-        <td>Instrumentalness</td>
-        <td>{{ instrumentalness }}</td>
-    </tr>
-    <tr>
-        <td>Liveness</td>
-        <td>{{ liveness }}</td>
-    </tr>
-    <tr>
-        <td>Valence</td>
-        <td>{{ valence }}</td>
-    </tr>
-    <tr>
-        <td>Tempo</td>
-        <td>{{ tempo }}</td>
-    </tr>
-    <tr>
-        <td>Duration (ms)</td>
-        <td>{{ duration_ms }}</td>
-    </tr>
-    <tr>
-        <td>Time Signature</td>
-        <td>{{ time_signature }}</td>
-    </tr>
+        
+        <button id="detailsButton" onclick="toggleDetails()">Show Details</button>
 
-    
-</table>
+        <div id="detailsTable" style="display: none;">                    
+                
+                <table>
+                    <tr>
+                    <th>Variable Name</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Artist Name</td>
+                    <td>{{track_dict_list.0.artist_name }}</td>
+                </tr>
+                <tr>
+                    <td>Album Name</td>
+                    <td>{{track_dict_list.0.album_name }}</td>
+                </tr>
+                <tr>
+                    <td>Album ID</td>
+                    <td>{{track_dict_list.0.album_id }}</td>
+                </tr>
+                <tr>
+                    <td>Release Date</td>
+                    <td>{{track_dict_list.0.release_date }}</td>
+                </tr>
+                <tr>
+                    <td>Track Name</td>
+                    <td>{{track_dict_list.0.track_name }}</td>
+                </tr>
+                <tr>
+                    <td>Track ID</td>
+                    <td>{{track_dict_list.0.track_id }}</td>
+                </tr>
+                <tr>
+                    <td>Popularity</td>
+                    <td>{{track_dict_list.0.popularity }}</td>
+                </tr>
+                <tr>
+                    <td>Duration (ms)</td>
+                    <td>{{track_dict_list.0.duration_ms }}</td>
+                </tr>
+                <tr>
+                    <td>Explicit</td>
+                    <td>{{track_dict_list.0.explicit }}</td>
+                </tr>
+                <tr>
+                    <td>External URLs</td>
+                    <td>{{track_dict_list.0.external_urls }}</td>
+                </tr>
+                <tr>
+                    <td>Is Local</td>
+                    <td>{{track_dict_list.0.is_local }}</td>
+                </tr>
+                <tr>
+                    <td>Preview URL</td>
+                    <td><audio id="myAudio" controls preload="auto" src="{{track_dict_list.0.preview_url }}"></audio></td>
+                </tr>
+                <tr>
+                    <td>Track Number</td>
+                    <td>{{track_dict_list.0.track_number }}</td>
+                </tr>
+                
+                <tr>
+                    <td>Danceability</td>
+                    <td>{{ track_dict_list.0.audio_features.danceability }}</td>
+                </tr>
+                <tr>
+                    <td>Energy</td>
+                    <td>{{ track_dict_list.0.audio_features.energy }}</td>
+                </tr>
+                <tr>
+                    <td>Key</td>
+                    <td>{{ track_dict_list.0.audio_features.key }}</td>
+                </tr>
+                <tr>
+                    <td>Loudness</td>
+                    <td>{{ track_dict_list.0.audio_features.loudness }}</td>
+                </tr>
+                <tr>
+                    <td>Mode</td>
+                    <td>{{ track_dict_list.0.audio_features.mode }}</td>
+                </tr>
+                <tr>
+                    <td>Speechiness</td>
+                    <td>{{ track_dict_list.0.audio_features.speechiness }}</td>
+                </tr>
+                <tr>
+                    <td>Acousticness</td>
+                    <td>{{ track_dict_list.0.audio_features.acousticness }}</td>
+                </tr>
+                <tr>
+                    <td>Instrumentalness</td>
+                    <td>{{ track_dict_list.0.audio_features.instrumentalness }}</td>
+                </tr>
+                <tr>
+                    <td>Liveness</td>
+                    <td>{{ track_dict_list.0.audio_features.liveness }}</td>
+                </tr>
+                <tr>
+                    <td>Valence</td>
+                    <td>{{ track_dict_list.0.audio_features.valence }}</td>
+                </tr>
+                <tr>
+                    <td>Tempo</td>
+                    <td>{{ track_dict_list.0.audio_features.tempo }}</td>
+                </tr>
+                <tr>
+                    <td>Duration (ms)</td>
+                    <td>{{ track_dict_list.0.audio_features.duration_ms }}</td>
+                </tr>
+                <tr>
+                    <td>Time Signature</td>
+                    <td>{{ track_dict_list.0.audio_features.time_signature }}</td>
+                </tr>
 
-</div>
-<script>
+                
+            </table>
+
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
     let audio = document.getElementById("myAudio")
     audio.volume = 0.1; // Volume réglé à 50%
 
@@ -167,6 +192,4 @@
         }
     }
     </script>
-{{df|safe}}
-
 {% endblock content %}

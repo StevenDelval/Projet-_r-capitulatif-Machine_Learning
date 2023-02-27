@@ -10,14 +10,14 @@ from django.views import generic                                        # For si
 from django.views.generic import CreateView                             # For SignUp form Page  
 from . import forms                                                     # For SignUp form Page 
 from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView                           # For Your text analysis
+from django.views.generic import TemplateView                     
 from django.shortcuts import render
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import pandas as pd
 
 
-                                          # For URL text analysis
+
 
 #################################################################################################################################
 #################################################################################################################################
@@ -34,7 +34,17 @@ def about(request):
 
 
 
-###____________________________Scrapping____________________________###
+
+#################################################################################################################################
+#################################################################################################################################
+#################################################################################################################################
+###                                                                                                                           ###
+###                                                         Home                                                             ###
+###                                                                                                                           ###
+#################################################################################################################################
+#################################################################################################################################
+#################################################################################################################################
+
 
 @login_required     
 def result(request):
@@ -46,75 +56,85 @@ def result(request):
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-    results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=1)
+    artist_name = []
+    album_name = []
+    album_id = []
+    track_name = []
+    track_id = []
+    popularity = []
+    release_date = []
+    duration_ms = []
+    explicit = []
+    external_urls = []
+    is_local = []
+    preview_url = []
+    track_number = []
+    audio_features = []
+    genre = []
+    #results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=1)
 
-    # Extract additional information from the search results
-    for j, t in enumerate(results['tracks']['items']):
-    # Get artist data
-        artist_name = t['artists'][0]['name']
+    for k,i in enumerate(range(0,50,50)):
+            
+                    track_results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=50)
+                    for j, t in enumerate(track_results['tracks']['items']):
+                        # Get artist data
+                        artist_name.append(t['artists'][0]['name'])
+                        
+                        # Get album data
+                        album_name.append(t['album']['name'])
+                        album_id.append(t['album']['id'])
+                        release_date.append(t['album']['release_date'])
+                        
+                        # Get track data
+                        track_name.append(t['name'])
+                        track_id.append(t['id'])
+                        popularity.append(t['popularity'])
+                        duration_ms.append(t['duration_ms'])
+                        explicit.append(t['explicit'])
+                        external_urls.append(t['external_urls']['spotify'])
+                        is_local.append(t['is_local'])
+                        preview_url.append(t['preview_url'])
+                        track_number.append(t['track_number'])
 
-        # Get album data
-        album_name = t['album']['name']
-        album_id = t['album']['id']
-        release_date = t['album']['release_date']
-
-        # Get track data
-        track_name = t['name']
-        track_id = t['id']
-        popularity = t['popularity']
-        duration_ms = t['duration_ms']
-        explicit = t['explicit']
-        external_urls = t['external_urls']['spotify']
-        is_local = t['is_local']
-        preview_url = t['preview_url']
-        track_number = t['track_number']
-
-        # Get audio features
-        af = sp.audio_features(t['id'])[0]
-        danceability = af['danceability']
-        energy = af['energy']
-        key = af['key']
-        loudness = af['loudness']
-        mode = af['mode']
-        speechiness = af['speechiness']
-        acousticness = af['acousticness']
-        instrumentalness = af['instrumentalness']
-        liveness = af['liveness']
-        valence = af['valence']
-        tempo = af['tempo']
-        duration_ms = af['duration_ms']
-        time_signature = af['time_signature']
+                        # Get audio features
+                        af = sp.audio_features(t['id'])[0]
+                        audio_features.append(af)
 
 
-    
 
-    return render(request, 'result.html', {
+
+
+    import pandas as pd
+    track_dataframe = pd.DataFrame({
         'artist_name': artist_name,
         'album_name': album_name,
         'album_id': album_id,
-        'release_date': release_date,
         'track_name': track_name,
         'track_id': track_id,
         'popularity': popularity,
+        'release_date': release_date,
         'duration_ms': duration_ms,
         'explicit': explicit,
         'external_urls': external_urls,
         'is_local': is_local,
         'preview_url': preview_url,
         'track_number': track_number,
-        'danceability': danceability,
-        'energy': energy,
-        'key': key,
-        'loudness': loudness,
-        'mode': mode,
-        'speechiness': speechiness,
-        'acousticness': acousticness,
-        'instrumentalness': instrumentalness,
-        'liveness': liveness,
-        'valence': valence,
-        'tempo': tempo,
-        'time_signature': time_signature,
+        'audio_features': audio_features,   
+        })
+
+
+    track_dict_list = []
+    for index, row in track_dataframe.iterrows():
+        track_dict_list.append(row.to_dict())
+
+    
+
+    return render(request, 'result.html', {
+        'track_dict_list': track_dict_list,
+        'track_dataframe': track_dataframe,
     })
+
+
 
 def home(request):
     return render(request, 'home.html')

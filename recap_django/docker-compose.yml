@@ -34,3 +34,8 @@ volumes:
 
 # docker compose build
 # docker compose up 
+
+# in Docker shell :
+# python manage.py shell
+# from django.conf import settings
+# settings.DATABASES 

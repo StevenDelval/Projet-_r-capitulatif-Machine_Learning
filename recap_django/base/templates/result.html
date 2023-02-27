@@ -3,6 +3,162 @@
 {% load static %}
 
 {% block content %}
-popularity : {{popularity}}
+
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+</style>
+
+
+<script>
+    function toggleDetails() {
+        var detailsTable = document.getElementById("detailsTable");
+        var detailsButton = document.getElementById("detailsButton");
+        if (detailsTable.style.display === "none") {
+            detailsTable.style.display = "table";
+            detailsButton.innerHTML = "Hide Details";
+        } else {
+            detailsTable.style.display = "none";
+            detailsButton.innerHTML = "Show Details";
+        }
+    }
+    </script>
+
+<button id="detailsButton" onclick="toggleDetails()">Show Details</button>
+
+<div id="detailsTable" style="display: none;">
+
+
+
+
+<table>
+    <tr>
+        <th>Variable Name</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Artist Name</td>
+        <td>{{ artist_name }}</td>
+    </tr>
+    <tr>
+        <td>Album Name</td>
+        <td>{{ album_name }}</td>
+    </tr>
+    <tr>
+        <td>Album ID</td>
+        <td>{{ album_id }}</td>
+    </tr>
+    <tr>
+        <td>Release Date</td>
+        <td>{{ release_date }}</td>
+    </tr>
+    <tr>
+        <td>Track Name</td>
+        <td>{{ track_name }}</td>
+    </tr>
+    <tr>
+        <td>Track ID</td>
+        <td>{{ track_id }}</td>
+    </tr>
+    <tr>
+        <td>Popularity</td>
+        <td>{{ popularity }}</td>
+    </tr>
+    <tr>
+        <td>Duration (ms)</td>
+        <td>{{ duration_ms }}</td>
+    </tr>
+    <tr>
+        <td>Explicit</td>
+        <td>{{ explicit }}</td>
+    </tr>
+    <tr>
+        <td>External URLs</td>
+        <td>{{ external_urls }}</td>
+    </tr>
+    <tr>
+        <td>Is Local</td>
+        <td>{{ is_local }}</td>
+    </tr>
+    <tr>
+        <td>Preview URL</td>
+        <td>{{ preview_url }}</td>
+    </tr>
+    <tr>
+        <td>Track Number</td>
+        <td>{{ track_number }}</td>
+    </tr>
+
+    <tr>
+        <td>Danceability</td>
+        <td>{{ danceability }}</td>
+    </tr>
+    <tr>
+        <td>Energy</td>
+        <td>{{ energy }}</td>
+    </tr>
+    <tr>
+        <td>Key</td>
+        <td>{{ key }}</td>
+    </tr>
+    <tr>
+        <td>Loudness</td>
+        <td>{{ loudness }}</td>
+    </tr>
+    <tr>
+        <td>Mode</td>
+        <td>{{ mode }}</td>
+    </tr>
+    <tr>
+        <td>Speechiness</td>
+        <td>{{ speechiness }}</td>
+    </tr>
+    <tr>
+        <td>Acousticness</td>
+        <td>{{ acousticness }}</td>
+    </tr>
+    <tr>
+        <td>Instrumentalness</td>
+        <td>{{ instrumentalness }}</td>
+    </tr>
+    <tr>
+        <td>Liveness</td>
+        <td>{{ liveness }}</td>
+    </tr>
+    <tr>
+        <td>Valence</td>
+        <td>{{ valence }}</td>
+    </tr>
+    <tr>
+        <td>Tempo</td>
+        <td>{{ tempo }}</td>
+    </tr>
+    <tr>
+        <td>Duration (ms)</td>
+        <td>{{ duration_ms }}</td>
+    </tr>
+    <tr>
+        <td>Time Signature</td>
+        <td>{{ time_signature }}</td>
+    </tr>
+
+    
+</table>
+
+</div>
+{{df|safe}}
 
 {% endblock content %}

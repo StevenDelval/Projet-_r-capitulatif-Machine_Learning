@@ -1,0 +1,6 @@
+mlflow<3,>=2.1
+ipython==8.10.0
+psutil==5.9.0
+shap==0.41.0
+typing-extensions==4.4.0
+xgboost==1.7.4

@@ -23,29 +23,21 @@
 </style>
 
 
-<script>
-    function toggleDetails() {
-        var detailsTable = document.getElementById("detailsTable");
-        var detailsButton = document.getElementById("detailsButton");
-        if (detailsTable.style.display === "none") {
-            detailsTable.style.display = "table";
-            detailsButton.innerHTML = "Hide Details";
-        } else {
-            detailsTable.style.display = "none";
-            detailsButton.innerHTML = "Show Details";
-        }
-    }
-    </script>
+
+
+
+<h1>{{ track_name }}, Popularity :{{popularity}}</h1>
+
 
 <button id="detailsButton" onclick="toggleDetails()">Show Details</button>
 
 <div id="detailsTable" style="display: none;">
 
-
-
-
-<table>
-    <tr>
+    
+    
+    
+    <table>
+        <tr>
         <th>Variable Name</th>
         <th>Value</th>
     </tr>
@@ -95,13 +87,13 @@
     </tr>
     <tr>
         <td>Preview URL</td>
-        <td>{{ preview_url }}</td>
+        <td><audio id="myAudio" controls preload="auto" src="{{ preview_url }}"></audio></td>
     </tr>
     <tr>
         <td>Track Number</td>
         <td>{{ track_number }}</td>
     </tr>
-
+    
     <tr>
         <td>Danceability</td>
         <td>{{ danceability }}</td>
@@ -159,6 +151,22 @@
 </table>
 
 </div>
+<script>
+    let audio = document.getElementById("myAudio")
+    audio.volume = 0.1; // Volume réglé à 50%
+
+    function toggleDetails() {
+        var detailsTable = document.getElementById("detailsTable");
+        var detailsButton = document.getElementById("detailsButton");
+        if (detailsTable.style.display === "none") {
+            detailsTable.style.display = "table";
+            detailsButton.innerHTML = "Hide Details";
+        } else {
+            detailsTable.style.display = "none";
+            detailsButton.innerHTML = "Show Details";
+        }
+    }
+    </script>
 {{df|safe}}
 
 {% endblock content %}

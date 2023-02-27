@@ -4,3 +4,4 @@ django
 whitenoise
 psycopg2-binary
 spotipy
+pandas

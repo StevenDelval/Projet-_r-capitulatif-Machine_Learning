@@ -50,6 +50,7 @@ def about(request):
 def result(request):
     Track_Name = request.GET['Track_Name']  
     Artiste_Name = request.GET['Artiste_Name']  
+    Genre = request.GET['Genre']  
 
     cid = '78e434819ce74de2a9da9bd344483f65'
     secret = '4bc5580d98ae45f087b511650c3e9d0b'
@@ -70,13 +71,15 @@ def result(request):
     preview_url = []
     track_number = []
     audio_features = []
-    genre = []
+    image_url = []
     #results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=1)
 
     for k,i in enumerate(range(0,50,50)):
             
                     track_results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=50)
                     for j, t in enumerate(track_results['tracks']['items']):
+                        
+                        image_url.append(t['album']['images'][0]['url'])
                         # Get artist data
                         artist_name.append(t['artists'][0]['name'])
                         
@@ -95,6 +98,7 @@ def result(request):
                         is_local.append(t['is_local'])
                         preview_url.append(t['preview_url'])
                         track_number.append(t['track_number'])
+                        
 
                         # Get audio features
                         af = sp.audio_features(t['id'])[0]
@@ -120,6 +124,7 @@ def result(request):
         'preview_url': preview_url,
         'track_number': track_number,
         'audio_features': audio_features,   
+        'image_url':image_url,
         })
 
 

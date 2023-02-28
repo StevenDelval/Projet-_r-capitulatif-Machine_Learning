@@ -133,11 +133,17 @@ def result(request):
         track_dict_list.append(row.to_dict())
 
     
-
-    return render(request, 'result.html', {
-        'track_dict_list': track_dict_list,
-        'track_dataframe': track_dataframe,
-    })
+    if len(track_dataframe)>0:
+        return render(request, 'result.html', {
+            'track_dict_list': track_dict_list,
+            'track_dataframe': track_dataframe,
+        })
+    else:
+        return render(request, 'result_with_no_text.html', {
+            'Track_Name': Track_Name,
+            'Artiste_Name': Artiste_Name,
+            'Genre':Genre,
+        })
 
 
 

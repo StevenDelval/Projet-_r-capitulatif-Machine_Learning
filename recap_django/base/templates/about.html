@@ -4,24 +4,19 @@
 
 {% block content %}
 
+<h1>À propos de Les Gens N'ont Plus de Goût</h1>
 
 
-<h1>About the project</h1>
-<h2>Projet récapitulatif - Machine Learning</h2>
-<div>
-  <h2>Contexte du projet</h2>
-  <p>Vous travaillez pour une entreprise qui crée des rééditions d’albums de musique légendaires au format vinyle. Le département marketing a une idée pour mettre en avant les services de votre entreprise et cherche à savoir si c’est réalisable. Cette idée consiste à publier une application web appelée “Les gens n’ont plus de goût”. Cette application permettrait de répondre à une question simple: “En se basant sur les caractéristiques musicales d’un morceau, est ce qu’un tube sorti il y a des années et qui est devenu un classique aurait connu le même succès s’il avait été sorti récemment”. Plus prosaïquement, l’idée est d'étudier le lien entre les caractéristiques musicales des morceaux sortis en 2022 et leur popularité pour appliquer ce modèle à n’importe morceau de l’histoire de la musique et en particulier du catalogue de votre entreprise.</p>
-  <p>Avant de vous lancer dans un tel développement, vous devez vous assurer de la faisabilité du projet. Cela consiste principalement en deux choses: Vous assurez de l’existence et de la disponibilité des données pour réaliser cette étude. Votre manager vous guide vers l’API du service spotify qui pourrait être une bonne première piste à explorer Étudier si un modèle à peu près convenable est réalisable. Si on suppose un score de popularité entre 0 et 100, il faudrait un modèle avec une MAE maximum d'environ 20.</p>
-  <p>Vous avez maximum trois jours pour valider ces deux points. Ces trois jours correspondent donc à une preuve de concept</p>
-  <h2>Partie 2 :</h2>
-  <p>Bravo, votre modèle semble prometteur, vous pouvez continuer à récolter plus de données et à finetune vos modèles. Quand vous serez satisfait de votre modélisation, vous pourrez passer à la mise en production.</p>
-  <p>Voici les modalités à respecter :</p>
-  <ul>
-    <li>Une API pour votre modèle</li>
-    <li>Une app web en Django pour consommer votre API (authentification, page de profil, header, footer, plusieurs pages)</li>
-    <li>Une base de données SQL (table utilisateur, table des musiques)</li>
-  </ul>
-  <p>Vous utiliserez docker pour transformer en containers chacune de ces composantes. Vous devrez utiliser docker compose pour votre app web et votre BDD (vous pouvez également inclure votre API mais comme elle va communiquer avec votre app par le bias d'internet, c'est facultatif). L'objectif final sera de déployer tous ces éléments sur Azure (App Services).</p>
-  <p>Votre application doit permettre à un utilisateur de rentrer la musique de son choix et d'avoir une prédiction qui répondra à la problématique suivante : "Est-ce que cette chanson aurait été populaire si elle était sortir en 2022". Vous êtes libre de formatiliser la prédiction comme vous voulez. N'oubliez pas que cette application est destinée à un utilisateur final, vous devrez donc pour toutes les mesures nécessaire pour rendre cette application ludique.</p>
+<h2>Contexte du projet</h2>
+<p>Notre entreprise crée des rééditions d'albums de musique légendaires au format vinyle. Dans le cadre de notre département marketing, nous avons développé une application web appelée "Les Gens N'ont Plus de Goût". Cette application permet de répondre à une question simple : "En se basant sur les caractéristiques musicales d'un morceau, est-ce qu'un tube sorti il y a des années et qui est devenu un classique aurait connu le même succès s'il avait été sorti récemment?". Pour cela, nous avons étudié le lien entre les caractéristiques musicales des morceaux sortis en 2022 et leur popularité, afin d'appliquer ce modèle à n'importe quel morceau de l'histoire de la musique, en particulier du catalogue de notre entreprise.</p>
 
+
+<h2>Objectifs du projet</h2>
+  <p>Notre objectif était de valider la faisabilité du projet en nous assurant de l'existence et de la disponibilité des données nécessaires, ainsi qu'en étudiant si un modèle à peu près convenable était réalisable. Pour cela, nous avons utilisé l'API du service Spotify pour collecter des données et avons entraîné plusieurs modèles de machine learning. Nous avons fixé comme objectif une MAE maximum d'environ 20 pour notre modèle.</p>
+  
+  <h2>Résultats</h2>
+  <p>Nous avons réussi à collecter suffisamment de données et à entraîner un modèle performant, avec une MAE maximum de 20. Nous avons ensuite développé une API pour notre modèle, ainsi qu'une application web en Django permettant à un utilisateur de rentrer la musique de son choix et d'avoir une prédiction sur sa popularité si elle était sortie en 2022. Nous avons également déployé chacune de ces composantes sur Azure, en utilisant Docker et Docker Compose. Enfin, nous avons rédigé un README clair et concis pour permettre une utilisation facile de notre application.</p>
+  
+  <h2>Conclusion</h2>
+  <p>Nous sommes très fiers de ce projet, qui a été un réel défi technique. Nous espérons que notre application permettra aux utilisateurs de découvrir de nouvelles chansons et d'en apprendre davantage sur les caractéristiques musicales qui ont contribué à leur succès. Nous continuerons à travailler sur ce projet pour le perfectionner et le rendre encore plus ludique pour les utilisateurs.</p>
 {% endblock content %}

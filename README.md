@@ -7,7 +7,7 @@ Pour cela, nous avons étudié le lien entre les caractéristiques musicales des
 ## Installation
 1. Clonez le dépôt git :
 ```bash
-git clone https://github.com/votrenom/Les-Gens-Nont-Plus-de-Gout.git
+git clone https://github.com/StevenDelval/Projet-_recapitulatif-Machine_Learning
 ```
 
 2. Créez un environnement virtuel :

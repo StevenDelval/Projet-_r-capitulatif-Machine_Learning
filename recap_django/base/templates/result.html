@@ -199,7 +199,119 @@
         <audio class="w-full absolute bottom-0 inset-x-0 mt-4 rounded-lg bg-gray-100 " id="myAudio" controls preload="auto" src="{{item.preview_url }}"></audio>
       
 
+<<<<<<< HEAD
       </div>
+=======
+        <div id="detailsTable" style="display: none;">                    
+                
+                <table>
+                    <tr>
+                    <th>Variable Name</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Artist Name</td>
+                    <td>{{track_dict_list.0.artist_name }}</td>
+                </tr>
+                <tr>
+                    <td>Album Name</td>
+                    <td>{{track_dict_list.0.album_name }}</td>
+                </tr>
+                <tr>
+                    <td>Album ID</td>
+                    <td>{{track_dict_list.0.album_id }}</td>
+                </tr>
+                <tr>
+                    <td>Release Date</td>
+                    <td>{{track_dict_list.0.release_date }}</td>
+                </tr>
+                <tr>
+                    <td>Track Name</td>
+                    <td>{{track_dict_list.0.track_name }}</td>
+                </tr>
+                <tr>
+                    <td>Track ID</td>
+                    <td>{{track_dict_list.0.track_id }}</td>
+                </tr>
+                <tr>
+                    <td>Popularity</td>
+                    <td>{{track_dict_list.0.popularity }}</td>
+                </tr>
+                <tr>
+                    <td>Duration (ms)</td>
+                    <td>{{track_dict_list.0.duration_ms }}</td>
+                </tr>
+                <tr>
+                    <td>Explicit</td>
+                    <td>{{track_dict_list.0.explicit }}</td>
+                </tr>
+                <tr>
+                    <td>External URLs</td>
+                    <td>{{track_dict_list.0.external_urls }}</td>
+                </tr>
+                <tr>
+                    <td>Is Local</td>
+                    <td>{{track_dict_list.0.is_local }}</td>
+                </tr>
+
+                <tr>
+                    <td>Track Number</td>
+                    <td>{{track_dict_list.0.track_number }}</td>
+                </tr>
+                
+                <tr>
+                    <td>Danceability</td>
+                    <td>{{ track_dict_list.0.audio_features.danceability }}</td>
+                </tr>
+                <tr>
+                    <td>Energy</td>
+                    <td>{{ track_dict_list.0.audio_features.energy }}</td>
+                </tr>
+                <tr>
+                    <td>Key</td>
+                    <td>{{ track_dict_list.0.audio_features.key }}</td>
+                </tr>
+                <tr>
+                    <td>Loudness</td>
+                    <td>{{ track_dict_list.0.audio_features.loudness }}</td>
+                </tr>
+                <tr>
+                    <td>Mode</td>
+                    <td>{{ track_dict_list.0.audio_features.mode }}</td>
+                </tr>
+                <tr>
+                    <td>Speechiness</td>
+                    <td>{{ track_dict_list.0.audio_features.speechiness }}</td>
+                </tr>
+                <tr>
+                    <td>Acousticness</td>
+                    <td>{{ track_dict_list.0.audio_features.acousticness }}</td>
+                </tr>
+                <tr>
+                    <td>Instrumentalness</td>
+                    <td>{{ track_dict_list.0.audio_features.instrumentalness }}</td>
+                </tr>
+                <tr>
+                    <td>Liveness</td>
+                    <td>{{ track_dict_list.0.audio_features.liveness }}</td>
+                </tr>
+                <tr>
+                    <td>Valence</td>
+                    <td>{{ track_dict_list.0.audio_features.valence }}</td>
+                </tr>
+                <tr>
+                    <td>Tempo</td>
+                    <td>{{ track_dict_list.0.audio_features.tempo }}</td>
+                </tr>
+                <tr>
+                    <td>Duration (ms)</td>
+                    <td>{{ track_dict_list.0.audio_features.duration_ms }}</td>
+                </tr>
+                <tr>
+                    <td>Time Signature</td>
+                    <td>{{ track_dict_list.0.audio_features.time_signature }}</td>
+                </tr>
+>>>>>>> 0b0cbf326606553feb82388d5e8ebdd05db03250
 
 
 
@@ -290,8 +402,10 @@
 
 
 
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
 
+<<<<<<< HEAD
   <div class="col">
     <div class="card shadow-sm">
       <img src="{{track_dict_list.4.image_url}}" alt="" width="300" height="300">
@@ -303,11 +417,24 @@
         <div class="card-body">
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
             content. This content is a little bit longer.</p>
+=======
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="{{track_dict_list.1.image_url}}" alt="" width="300" height="300">
+            <h3>{{ track_dict_list.1.track_name }}
+                <br>Popularity: {{ track_dict_list.1.popularity }}
+                <br><audio id="myAudio" controls preload="auto" src="{{track_dict_list.1.preview_url }}"></audio>
+                    
+            </h3>
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+>>>>>>> 0b0cbf326606553feb82388d5e8ebdd05db03250
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
+<<<<<<< HEAD
 
 
           </div>
@@ -359,6 +486,128 @@
     </div>
   </div>
 </div> {% endcomment %}
+=======
+          
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="{{track_dict_list.2.image_url}}" alt="" width="300" height="300">
+        <h3>{{ track_dict_list.2.track_name }}
+            <br>Popularity: {{ track_dict_list.2.popularity }}
+            <br><audio id="myAudio" controls preload="auto" src="{{track_dict_list.2.preview_url }}"></audio>
+                
+        </h3>
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="{{track_dict_list.3.image_url}}" alt="" width="300" height="300">
+        <h3>{{ track_dict_list.3.track_name }}
+            <br>Popularity: {{ track_dict_list.3.popularity }}
+            <br><audio id="myAudio" controls preload="auto" src="{{track_dict_list.3.preview_url }}"></audio>
+                
+        </h3>
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{track_dict_list.4.image_url}}" alt="" width="300" height="300">
+              <h4>{{ track_dict_list.4.track_name }}
+                  <br>Popularity: {{ track_dict_list.4.popularity }}
+                  <br><audio id="myAudio" controls preload="auto" src="{{track_dict_list.4.preview_url }}"></audio>
+                      
+              </h3>
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{track_dict_list.5.image_url}}" alt="" width="300" height="300">
+          <h3>{{ track_dict_list.5.track_name }}
+              <br>Popularity: {{ track_dict_list.5.popularity }}
+              <br><audio id="myAudio" controls preload="auto" src="{{track_dict_list.5.preview_url }}"></audio>
+                  
+          </h3>
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{track_dict_list.6.image_url}}" alt="" width="300" height="300">
+          <h3>{{ track_dict_list.6.track_name }}
+              <br>Popularity: {{ track_dict_list.6.popularity }}
+              <br><audio id="myAudio" controls preload="auto" src="{{track_dict_list.6.preview_url }}"></audio>
+                  
+          </h3>
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+>>>>>>> 0b0cbf326606553feb82388d5e8ebdd05db03250
 
 
 

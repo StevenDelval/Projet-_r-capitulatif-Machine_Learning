@@ -76,7 +76,7 @@ def result(request):
 
     for k,i in enumerate(range(0,50,50)):
             
-                    track_results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=50)
+                    track_results = sp.search(q=f'track: {Track_Name} artist:{Artiste_Name}', type='track', limit=13)
                     for j, t in enumerate(track_results['tracks']['items']):
                         
                         image_url.append(t['album']['images'][0]['url'])

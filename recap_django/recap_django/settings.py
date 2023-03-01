@@ -27,11 +27,9 @@ SECRET_KEY = 'django-insecure-2=p)b=1m)*@6&r5#bihf(w464ldc#1^@z)kpl731zrlxq1pa3(
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["django-spotipy-1.onrender.com", "fastapi-model1.onrender.com"]
-CSRF_TRUSTED_ORIGINS = ["https://fastapi-model1.onrender.com/predict", "https://fastapi-model1.onrender.com/", "https://django-spotipy-1.onrender.com/"]
+ALLOWED_HOSTS = ["*"]
+# CSRF_TRUSTED_ORIGINS = [""]
 
-
-# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -109,34 +107,34 @@ DATABASES = {
     }
 }
 
-# DB_USERNAME = os.getenv('POSTGRES_USER')
-# DB_PASSWORD = os.getenv('POSTGRES_PASSWORD')
-# DB_DATABASE = os.getenv('POSTGRES_DB')
-# DB_HOST = os.getenv('POSTGRES_HOST')
-# DB_PORT = os.getenv('POSTGRES_PORT')
-# POSTGRES_AVAILABLE = all(   #use any name in place of POSTGRES_AVAILABLE
-#     [DB_USERNAME,
-#     DB_PASSWORD,
-#     DB_DATABASE,
-#     DB_HOST,
-#     DB_PORT]
-# )
-# try:
-#     POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
-# except:
-#     POSTGRES_RDY = 0
+DB_USERNAME = os.getenv('POSTGRES_USER')
+DB_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+DB_DATABASE = os.getenv('POSTGRES_DB')
+DB_HOST = os.getenv('POSTGRES_HOST')
+DB_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_AVAILABLE = all(   #use any name in place of POSTGRES_AVAILABLE
+    [DB_USERNAME,
+    DB_PASSWORD,
+    DB_DATABASE,
+    DB_HOST,
+    DB_PORT]
+)
+try:
+    POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
+except:
+    POSTGRES_RDY = 0
 
-# if POSTGRES_AVAILABLE and POSTGRES_RDY:
-#     DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': DB_DATABASE,
-#         'USER': DB_USERNAME,
-#         'PASSWORD': DB_PASSWORD,
-#         'HOST': DB_HOST,
-#         'PORT': DB_PORT,
-#     }
-# }  
+if POSTGRES_AVAILABLE and POSTGRES_RDY:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_DATABASE,
+        'USER': DB_USERNAME,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+    }
+}  
 
 
 

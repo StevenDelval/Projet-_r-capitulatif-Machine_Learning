@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<br> User name : {{user.get_username}}
+<br>First name : {{user.first_name}}
+<br>Last name : {{user.last_name}}
+<br>Email : {{user.email}}
+<br>Last join : {{user.last_login}}
+<br>Date joined : {{user.date_joined}}
+
+{% endblock content %}

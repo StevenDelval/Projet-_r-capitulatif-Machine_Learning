@@ -45,9 +45,9 @@
 
             {% if user.is_authenticated %}
 
-            
+            <a href="{% url 'user_info' %}"
             <span class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase"> Logged as :
-              {{user.get_username}}</span>
+              {{user.get_username}}</span></a>
             <a class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase"
               href="{% url 'logout' %}?next={{request.path}}"> log out</a>
             {% else %}

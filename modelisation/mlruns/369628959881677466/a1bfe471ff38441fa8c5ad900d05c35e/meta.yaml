@@ -1,0 +1,15 @@
+artifact_uri: file:///home/apprenant/Bureau/briefs/Projet-_r-capitulatif-Machine_Learning/mlruns/369628959881677466/a1bfe471ff38441fa8c5ad900d05c35e/artifacts
+end_time: 1677619503627
+entry_point_name: ''
+experiment_id: '369628959881677466'
+lifecycle_stage: active
+run_id: a1bfe471ff38441fa8c5ad900d05c35e
+run_name: XGBRegressor
+run_uuid: a1bfe471ff38441fa8c5ad900d05c35e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677619092184
+status: 3
+tags: []
+user_id: apprenant

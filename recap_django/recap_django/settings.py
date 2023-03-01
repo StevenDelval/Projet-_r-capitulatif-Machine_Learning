@@ -116,8 +116,10 @@ POSTGRES_AVAILABLE = all(   #use any name in place of POSTGRES_AVAILABLE
     DB_HOST,
     DB_PORT]
 )
-
-POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
+try:
+    POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
+except:
+    POSTGRES_RDY = 0
 
 if POSTGRES_AVAILABLE and POSTGRES_RDY:
     DATABASES = {

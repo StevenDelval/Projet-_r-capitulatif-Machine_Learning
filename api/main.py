@@ -1,3 +1,4 @@
+## uvicorn main:app --port 8001  --reload
 import pickle
 import pandas as pd
 from fastapi import FastAPI

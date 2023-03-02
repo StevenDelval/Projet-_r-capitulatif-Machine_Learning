@@ -136,6 +136,7 @@ def result(request):
 
     # Add the new columns to the original DataFrame
     track_dataframe = pd.concat([track_dataframe, audio_features_df], axis=1)
+    track_dataframe = track_dataframe.sort_values("popularity",ascending=False)
 
     track_dict_list = []
     for index, row in track_dataframe.iterrows():

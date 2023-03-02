@@ -7,7 +7,7 @@
 
 
 <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-  <div class="w-full max-w-md space-y-8 p-12 bg-white rounded-lg">
+  <div class="w-full max-w-4xl space-y-8 p-12 bg-white rounded-lg">
     <div>
       <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"><i class="fa-solid fa-user-plus"></i> Créer un compte</h2>
     </div>
@@ -15,33 +15,33 @@
       {% csrf_token %}
       <input type="hidden" name="remember" value="true">
       <div class="-space-y-px rounded-md shadow-sm">
-        <div>
+        <div style="margin: 20px 0">
           <label for="{{form.username.id_for_label}}">Nom d'utilisateur</label>
 
           {{form.username|add_class:"relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-gray-700 focus:outline-none focus:ring-gray-700 sm:text-sm"}}
         </div>
-        <div>
+        <div style="margin: 20px 0">
           <label for="{{form.password1.id_for_label}}">Mot de passe</label>
           {{form.password1|add_class:"relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-gray-700 focus:outline-none focus:ring-gray-700 sm:text-sm"}}
-          <div align="left"  <small style="color: grey">{{form.password1.help_text}}</small> </div>
+          <div align="left"  <small style="color: grey" style="margin: 20px 0">Votre mot de passe ne doit pas contenir d'informations personnelles, avoir au moins 8 caractères et être composé de lettres et de chiffres.</small> </div>
         </div>
-        <div>
+        <div style="margin: 20px 0">
           <label for="{{form.password2.id_for_label}}">Confirmation du mot de passe</label>
           {{form.password2|add_class:"relative block w-full appearance-none rounded-none  border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-gray-700 focus:outline-none focus:ring-gray-700 sm:text-sm"}}
         
-          <div align="left"  <small style="color: grey">{{form.password2.help_text}}</small> </div>
+          {% comment %} <div align="left"  <small style="color: grey" style="margin: 20px 0">{{form.password2.help_text}}</small> </div> {% endcomment %}
         </div>
-        <div>
+        <div style="margin: 20px 0">
           <label for="{{form.email.id_for_label}}">Votre adresse e-mail</label>
           {{form.email|add_class:"relative block w-full appearance-none rounded-none  border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-gray-700 focus:outline-none focus:ring-gray-700 sm:text-sm"}}
-        <div align="left"  <small style="color: grey">Merci d'entrer une adresse valide.</small> </div>
+        <div align="left"  <small style="color: grey" style="margin: 20px 0">Merci d'entrer une adresse valide.</small> </div>
         </div>
-        <div>
+        <div style="margin: 20px 0">
           <label for="{{form.first_name.id_for_label}}">Prénom</label>
           {{form.first_name|add_class:"relative block w-full appearance-none rounded-none  border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-gray-700 focus:outline-none focus:ring-gray-700 sm:text-sm"}}
         
         </div>
-        <div>
+        <div style="margin: 20px 0">
           <label for="{{form.last_name.id_for_label}}">Nom de Famille</label>
           {{form.last_name|add_class:"relative block w-full appearance-none rounded-none rounded-b-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-gray-700 focus:outline-none focus:ring-gray-700 sm:text-sm"}}
         </div>

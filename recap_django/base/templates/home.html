@@ -43,7 +43,11 @@
           
             <select class="block appearance-none w-full py-2 px-4 pr-8 leading-tight rounded-l-md border border-gray-400 bg-white focus:outline-none focus:bg-white focus:border-gray-500" id="floatingInputGrid" name="Genre" >
               {% for genre in genres %}
-              <option>{{ genre }}</option>
+              {% if genre == "pop" %}
+              <option value={{ genre }} selected>{{ genre }}</option>
+              {% else %}
+              <option value={{ genre }}>{{ genre }}</option>
+              {% endif %}
               {% endfor %}
             </select>
         </div>

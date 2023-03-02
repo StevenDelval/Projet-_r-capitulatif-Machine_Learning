@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Projet récapitulatif - Machine Learning
-# Equipe : Benji, Cédric, Emad, Steven
-=======
 # Les Gens N'ont Plus de Goût
 ## Description
 Les Gens N'ont Plus de Goût est une application web développée dans le cadre du département marketing de notre entreprise spécialisée dans les rééditions d'albums de musique légendaires au format vinyle. Cette application permet de répondre à une question simple : "En se basant sur les caractéristiques musicales d'un morceau, est-ce qu'un tube sorti il y a des années et qui est devenu un classique aurait connu le même succès s'il avait été sorti récemment?".
@@ -55,4 +51,3 @@ Nous avons déployé notre application sur Azure en utilisant Docker et Docker C
 
 ## Références
 - [codepen](https://codepen.io/devparth/pen/dxpKKZ)
->>>>>>> release/RELEASE

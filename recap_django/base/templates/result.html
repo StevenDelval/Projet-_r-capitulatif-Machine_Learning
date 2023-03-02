@@ -6,33 +6,40 @@
 
 
 
-<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-  <div class="bg-white rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 ">
-    <div class="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-      <div class="lg:self-center">
-        <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+<div class="max-w-7xl mx-auto sm:w-3/4 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="bg-white rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-3">
+    <div class="py-2 px-10  sm:px-16 ">
+      <div class="flex flex-col justify-between items-cente h-full">
+        <div>
+        <h2 class="text-xl font-extrabold text-gray-900 sm:text-2xl">
           {{ track_dict_list.0.track_name }}
         </h2>
-        <h3 class="text-2xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.artist_name }}</h3>
+        <h3 class="mt-4 text-xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.artist_name }}</h3>
+      </div>
         <p class="mt-4 text-lg leading-6 text-gray-900">Spotify popularity : {{track_dict_list.0.popularity}}</p>
-        <div class="flex flex-col justify-center items-center">
-          <p class="mt-4 text-lg leading-6 text-gray-900">Esitimated popularity in 2022: {{response_XGB}}</p>
-
-          <!--  Gauge chat  -->
-          <canvas id="foo"></canvas>
-        </div>
-        <div class="flex gap-4">
+        
+        <div class="flex gap-4 w-3/4">
           <button
             class="block w-full rounded-md bg-bordeaux px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
             id="detailsButton" onclick="toggleDetails()">More</button>
-          <audio id="myAudio" controls src="{{track_dict_list.0.preview_url }}"></audio>
+          
         </div>
       </div>
+    </div>
+    <div class="py-2 mb-12 px-10  sm:px-16 ">
+      <div class="flex flex-col justify-between items-center gap-4">
+        <p class="text-lg leading-6 text-gray-900">Estimated popularity in 2022: {{response_XGB}}</p>
+
+        <!--  Gauge chat  -->
+        <canvas class="mb-12" id="foo"></canvas>
+        <audio class="" id="myAudio" controls src="{{track_dict_list.0.preview_url }}"></audio>
+      </div>
+      
     </div>
     <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
       <img class="rounded-md object-cover" src="{{track_dict_list.0.image_url}}" alt="">
     </div>
-    <div id="detailsTable" class="col-span-2" style="display: none;">
+    <div id="detailsTable" class="col-span-3" style="display: none;">
       <table class="border-collapse w-full">
         <thead>
           <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">

@@ -6,7 +6,7 @@
         <button id="menuBurger" type="button"
           class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
           aria-controls="mobile-menu" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
+          <span class="sr-only">Ouvrir le menu principal</span>
           <!--
                 Icon when menu is closed.
     
@@ -39,22 +39,21 @@
           <div id="navLinks" class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-white hover:bg-gray-700 hover:text-white" -->
             <a href="{% url 'home' %}" class="text-white px-1 md:px-3 py-2 rounded-md text-base font-medium uppercase"
-              aria-current="page">Spotify</a>
+              aria-current="page">Rechercher une musique</a>
             <a href="{% url 'about' %}"
-              class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">About</a>
+              class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">À propos</a>
 
             {% if user.is_authenticated %}
 
             <a href="{% url 'user_info' %}"
-            <span class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase"> Logged as :
-              {{user.get_username}}</span></a>
+            <span class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">{{user.get_username}}</span></a>
             <a class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase"
-              href="{% url 'logout' %}?next={{request.path}}"> log out</a>
+              href="{% url 'logout' %}?next={{request.path}}">Se déconnecter</a>
             {% else %}
             <a href="{% url 'login' %}"
-              class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">Login</a>
+              class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">Se connecter</a>
             <a href="{% url 'signup' %}"
-              class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">Sign-up</a>
+              class="text-white  px-1 py-2 md:px-3 rounded-md text-base font-medium uppercase">S'inscrire</a>
             {% endif %}
 
           </div>
@@ -71,22 +70,21 @@
     <div class="px-2 pt-2 pb-3 space-y-1">
       <!-- Current: "bg-gray-900 text-white", Default: "text-white hover:bg-gray-700 hover:text-white" -->
       <a href="{% url 'home' %}" class=" text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
-        aria-current="page">Spotify</a>
+        aria-current="page">Rechercher une musique</a>
 
       <a href="{% url 'about' %}"
-        class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">About</a>
+        class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">À propos</a>
 
       {% if user.is_authenticated %}
 
-      <span class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase"> Logged as :
-        {{user.get_username}}</span>
+      <span class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">{{user.get_username}}</span>
       <a class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase"
-        href="{% url 'logout' %}?next={{request.path}}"> log out</a>
+        href="{% url 'logout' %}?next={{request.path}}">Se déconnecter</a>
       {% else %}
       <a href="{% url 'login' %}"
-        class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">Login</a>
+        class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">Se connecter</a>
       <a href="{% url 'signup' %}"
-        class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">Sign-up</a>
+        class="text-white  block px-3 py-2 rounded-md text-base font-medium uppercase">S'inscrire'</a>
       {% endif %}
     </div>
   </div>

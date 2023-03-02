@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+  <div class="bg-white rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 ">
+    <div class="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+      <div class="lg:self-center">
+        <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+          {{ track_dict_list.0.track_name }}
+        </h2>
+        <h3 class="text-2xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.artist_name }}</h3>
+        <p class="mt-4 text-lg leading-6 text-gray-900">Spotify popularity : {{track_dict_list.0.popularity}}</p>
+        <div class="flex flex-col justify-center items-center">
+          <p class="mt-4 text-lg leading-6 text-gray-900">Esitimated popularity in 2022: {{response_XGB}}</p>
+
+          <!--  Gauge chat  -->
+          <canvas id="foo"></canvas>
+        </div>
+        <div class="flex gap-4">
+          <button
+            class="block w-full rounded-md bg-bordeaux px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
+            id="detailsButton" onclick="toggleDetails()">More</button>
+          <audio id="myAudio" controls src="{{track_dict_list.0.preview_url }}"></audio>
+        </div>
+      </div>
+    </div>
+    <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+      <img class="rounded-md object-cover" src="{{track_dict_list.0.image_url}}" alt="">
+    </div>
+    <div id="detailsTable" class="col-span-2" style="display: none;">
+      <table class="border-collapse w-full">
+        <thead>
+          <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th class="py-3 px-16 text-left">Variable Name</th>
+            <th class="py-3 px-6 text-left">Value</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600 text-sm font-light">
+          {% for key, value in track_dict_list.0.items %}
+          {% if key == "audio_features" %}
+          
+          {% else %}
+          <tr class="border-b border-gray-200 hover:bg-gray-100">
+            <td class="py-3 px-6 text-left">{{key}}</td>
+            <td class="py-3 px-6 text-left">{{value}}</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+      </table>
+
+    </div>
+
+    
+  </div>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-32 gap-8">
+  {% for item in track_dict_list|slice:"1:" %}
+
+  <div class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200 h-96 relative">
+ 
+
+
+    <div class="flex-shrink-0">
+      <img class="h-48 w-full object-cover" src="{{item.image_url}}" alt="">
+    </div>
+    <div class="flex-1 bg-white p-2 flex flex-col justify-between rounded-lg">
+      <div class="flex-1 ">
+
+
+        <h2 class="text-xl font-semibold text-gray-800">{{ item.track_name }}</h2>
+        <h3 class="text-xl mb-2 font-semibold text-gray-800">{{ item.artist_name }}</h3>
+        <span class="px-2 py-1 my-2 text-xs font-medium bg-teal-200 rounded-full">Popularity: {{ item.popularity }}</span>
+        
+        <audio class="w-full absolute bottom-0 inset-x-0 mt-4 rounded-lg bg-gray-100 audio" controls src="{{item.preview_url }}"></audio>
+      
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+{% endfor %}
+
+
+
+
+</div>
+
+
+
+
+<script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+<script>
+  var opts = {
+    angle: 0, // The span of the gauge arc
+    lineWidth: 0.3, // The line thickness
+    radiusScale: 0.9, // Relative radius
+    pointer: {
+      length: 0.42, // // Relative to gauge radius
+      strokeWidth: 0.029, // The thickness
+      color: '#000000' // Fill color
+    },
+    limitMax: true,     // If false, max value increases automatically if value > maxValue
+    limitMin: true,     // If true, the min value of the gauge will be fixed
+    colorStart: '#6F6EA0',   // Colors
+    colorStop: '#C0C0DB',    // just experiment with them
+    strokeColor: '#EEEEEE',  // to see which ones work best for you
+    generateGradient: true,
+    highDpiSupport: true,     // High resolution support
+    // renderTicks is Optional
+    // renderTicks: {
+    //   divisions: 0,
+    //   divWidth: 0.1,
+    //   divLength: 0.41,
+    //   divColor: '#333333',
+    //   subDivisions: 0,
+    //   subLength: 0.14,
+    //   subWidth: 3.1,
+    //   subColor: '#ffffff'
+    // },
+    staticZones: [
+      { strokeStyle: "#F03E3E", min: 0, max: 16 }, // Red from 70 to 80
+      { strokeStyle: "#db7114", min: 16, max: 31 }, // Yellow 80 to 90
+      { strokeStyle: "#FFDD00", min: 31, max: 44 }, // Green 90 to 100
+      { strokeStyle: "#30B32D", min: 44, max: 100 }, // Green 90 to 100
+    ],
+    staticLabels: {
+      font: "10px sans-serif",  // Specifies font
+      labels: [0, 16, 31, 44, 100],  // Print labels at these values
+      color: "#000000",  // Optional: Label text color
+      fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    },
+
+  };
+  var target = document.getElementById('foo'); // your canvas element
+  var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+  gauge.maxValue = 100; // set max gauge value
+  gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+  gauge.animationSpeed = 10; // set animation speed (32 is default value)
+  gauge.set({{response_XGB}}); // set actual value
+
+
+
+
+
+
+
+  let audios = document.querySelectorAll("audio")
+  for (element of audios){
+    element.volume = 0.1; // Volume réglé à 50%
+  }
+  function toggleDetails() {
+    var detailsTable = document.getElementById("detailsTable");
+    var detailsButton = document.getElementById("detailsButton");
+    if (detailsTable.style.display === "none") {
+      detailsTable.style.display = "table";
+      detailsButton.innerHTML = "Less";
+    } else {
+      detailsTable.style.display = "none";
+      detailsButton.innerHTML = "More";
+    }
+  }
+</script>
+{% endblock content %}

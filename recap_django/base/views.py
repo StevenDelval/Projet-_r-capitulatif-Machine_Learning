@@ -134,6 +134,8 @@ def result(request):
 
     
     if len(track_dataframe)>0:
+        track_dataframe = track_dataframe.sort_values('popularity', ascending=False)
+
             # Use pd.json_normalize() to convert the audio_features column to separate columns
         audio_features_df = pd.json_normalize(track_dataframe['audio_features'])
 

@@ -32,6 +32,7 @@ import json
 def about(request):
     return render(request, 'about.html')
 
+@login_required 
 def user_info(request):
     return render(request, 'user_info.html')
 
@@ -178,7 +179,13 @@ def result(request):
 
 
 def home(request):
-    return render(request, 'home.html')
+    cid = '78e434819ce74de2a9da9bd344483f65'
+    secret = '4bc5580d98ae45f087b511650c3e9d0b'
+    client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+    sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+    context = sp.recommendation_genre_seeds()
+    print(context)
+    return render(request, 'home.html',context=context)
 
 
 

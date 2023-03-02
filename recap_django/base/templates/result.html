@@ -9,16 +9,16 @@
 <div class="max-w-7xl mx-auto w-3/4 py-12 px-4 sm:px-6 lg:px-8">
   <div class="bg-white rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-3">
     <div class="py-2 px-10  sm:px-16 ">
-      <div class="flex flex-col justify-between h-full">
+      <div class="flex flex-col justify-between items-cente h-full">
         <div>
-        <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+        <h2 class="text-xl font-extrabold text-gray-900 sm:text-2xl">
           {{ track_dict_list.0.track_name }}
         </h2>
-        <h3 class="text-2xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.artist_name }}</h3>
+        <h3 class="mt-4 text-xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.artist_name }}</h3>
       </div>
         <p class="mt-4 text-lg leading-6 text-gray-900">Spotify popularity : {{track_dict_list.0.popularity}}</p>
         
-        <div class="flex gap-4">
+        <div class="flex gap-4 w-3/4">
           <button
             class="block w-full rounded-md bg-bordeaux px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
             id="detailsButton" onclick="toggleDetails()">More</button>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="py-12 px-10  sm:px-16 ">
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col justify-between items-center">
         <p class="mt-4 text-lg leading-6 text-gray-900">Esitimated popularity in 2022: {{response_XGB}}</p>
 
         <!--  Gauge chat  -->

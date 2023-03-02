@@ -13,7 +13,7 @@ services:
     env_file:
       - .env
   postgres_db:
-    image: postgres
+    image: postgres   # docker exec -it recap_django-postgres_db-1 psql -U myuser dockerdc  # select username from base_user;
     restart: always
     # command: -p 5433
     platform: linux/amd64

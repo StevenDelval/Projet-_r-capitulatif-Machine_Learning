@@ -4,51 +4,40 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Result</title>
+  <title>Les Gens N'ont Plus de Goût</title>
 
   <script src="https://kit.fontawesome.com/8f51521eb7.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  -->
 
-<style>
-  .center {
-    text-align : center;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(230, 239, 245);
-    padding: 10px; 
-  }
-  .CharBox{
-    text-align : center;
-    width: 480px;
-    height: 460px;
-  }
-  .special-card {
-    {% comment %} /* create a custom class so you 
-       do not run into specificity issues 
-       against bootstraps styles
-       which tends to work better than using !important 
-       (future you will thank you later)*/ {% endcomment %}
-    
-      {% comment %} background-color: rgba(245, 245, 245, 1); {% endcomment %}
-      {% comment %} opacity: .4; {% endcomment %}
-      text-align : left;
-      color : rgb(29, 161, 242);
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bordeaux': '#6D071A',
+            'black-gray': '#1C1C1C',
+            'linkedin': '#0e76a8',
+          }
+        }
+      }
     }
-  body{
-    min-height : 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  main{
-    flex-grow: 2;
-  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@100;500&display=swap" rel="stylesheet">
 
-
-  </style> 
+  <style>
+    a,
+    p,
+    span,
+    form {
+      font-family: 'Grandstander', cursive !important;
+    }
+  </style>
 </head>
 
 
@@ -56,30 +45,48 @@
 
 
 
-<body class="center">
-    
-    {% include 'includes/header.html' %}
-    <main>
-   
-    
+<body class="bg-gray-800 flex flex-col justify-between min-h-screen">
 
-            <div class="container">
-                    {% if messages %}
-                      {% for message in messages %}
-                          {{message}}
-                      {% endfor %}
-                    {% endif %}
-                  
+  {% include 'includes/header.html' %}
+  {% block content %}
+  {% endblock %}
+  
+ {% include 'includes/footer.html' %}
+  <script>
+    let buttonMenuBurger = document.getElementById("menuBurger");
+    const svgMenu = document.querySelectorAll("#menuBurger svg");
+    let menuMobile = document.getElementById("mobile-menu");
 
-                  {% block content %}
-                  {% endblock %}
-          </div>
+    buttonMenuBurger.addEventListener('click', (e) => {
+      for (let child of svgMenu) {
+        child.classList.toggle("block");
+        child.classList.toggle("hidden");
+      }
+      menuMobile.classList.toggle("hidden");
+    })
 
-    </main
+    const linkMenuMobile = document.querySelectorAll("#mobile-menu div a");
+    for (let link of linkMenuMobile) {
+      link.addEventListener('click', (e) => {
+        for (let child of svgMenu) {
+          child.classList.toggle("block");
+          child.classList.toggle("hidden");
+        }
+        menuMobile.classList.toggle("hidden");
+      })
+    }
+    let navLinks = document.getElementById("navLinks");
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.id != "navLinks") {
+        for (let child of navLinks.children) {
+          child.classList.remove("bg-gray-900");
+        }
+        e.target.classList.add("bg-gray-900");
 
-{% include 'includes/footer.html' %}
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+      }
+    })
+
+  </script>
 </body>
 
 </html>

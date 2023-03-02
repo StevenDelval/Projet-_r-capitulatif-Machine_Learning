@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-2=p)b=1m)*@6&r5#bihf(w464ldc#1^@z)kpl731zrlxq1pa3(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ["*"]
+# CSRF_TRUSTED_ORIGINS = [""]
+
 
 # Application definition
 
@@ -39,10 +42,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'widget_tweaks',
     'crispy_forms',
+    "crispy_tailwind",
     'base',
     # Ajouter les applications
     
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -81,12 +88,12 @@ WSGI_APPLICATION = "recap_django.wsgi.application"
 
 MAX_CONN_AGE = 600
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+#     }
+# }
 
 
 
@@ -112,8 +119,10 @@ POSTGRES_AVAILABLE = all(   #use any name in place of POSTGRES_AVAILABLE
     DB_HOST,
     DB_PORT]
 )
-
-POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
+try:
+    POSTGRES_RDY = int(os.getenv('POSTGRES_RDY'))
+except:
+    POSTGRES_RDY = 0
 
 if POSTGRES_AVAILABLE and POSTGRES_RDY:
     DATABASES = {

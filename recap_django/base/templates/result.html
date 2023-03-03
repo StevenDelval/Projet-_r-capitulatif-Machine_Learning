@@ -8,7 +8,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-32 gap-8">
 <div class=" w-full py-12 col-span-1 sm:col-span-2 lg:col-span-3">
   <div class="bg-white rounded-lg  shadow-xl overflow-hidden lg:grid lg:grid-cols-3">
-    <div class="py-2 px-10  sm:px-16 ">
+    <div class="py-8 px-10  sm:px-16 ">
       <div class="flex flex-col justify-between items-cente h-full">
         <div>
         <h2 class="text-xl font-extrabold text-gray-900 sm:text-3xl">
@@ -26,18 +26,18 @@
         </div>
       </div>
     </div>
-    <div class="py-2 mb-12 px-10  sm:px-16 ">
+    <div class="py-8  mb-12 px-10  sm:px-16 ">
       <div class="flex flex-col justify-between items-center gap-4">
         
         <h3 class="text-xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.Artiste }}</h3>
 
         <!--  Gauge chat  -->
-        <canvas class="mt-12 mb-24" id="foo"></canvas>
-        <audio class="lg:-mb-12" id="myAudio" controls src="{{track_dict_list.0.Lien_Audio }}"></audio>
+        <canvas class="mt-12 h-52 mb-24" id="foo"></canvas>
+        <audio class="rounded-full bg-gray-50 lg:-mb-12 " id="myAudio" controls src="{{track_dict_list.0.Lien_Audio }}"></audio>
       </div>
       
     </div>
-    <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+    <div class=" aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
       <img class="rounded-md " src="{{track_dict_list.0.Image}}" alt="">
     </div>
     <div id="detailsTable" class="col-span-3" style="display: none;">

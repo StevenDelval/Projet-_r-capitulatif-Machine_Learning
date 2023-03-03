@@ -5,6 +5,8 @@ accounts.csv
 
 data/data_600k_genre.csv
 
+modelisation/models/XGBClassifier_genre.pkl
+
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 

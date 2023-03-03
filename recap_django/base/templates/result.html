@@ -12,16 +12,16 @@
       <div class="flex flex-col justify-between items-cente h-full">
         <div>
         <h2 class="text-xl font-extrabold text-gray-900 sm:text-3xl">
-          {{ track_dict_list.0.track_name }}
+          {{ track_dict_list.0.Titre }}
         </h2>
       </div>
-      <p class="mt-4  text-lg leading-6 text-gray-900">Estimated popularity in 2022: {{response_XGB}}</p>
-        <p class="mt-4 text-lg leading-6 text-gray-900">Spotify popularity : {{track_dict_list.0.popularity}}</p>
+      <p class="mt-4  text-lg leading-6 text-gray-900">Popularité estimée: {{response_XGB}}</p>
+        <p class="mt-4 text-lg leading-6 text-gray-900">Popularité Spotify : {{track_dict_list.0.Popularité}}</p>
         
         <div class="flex gap-4 w-3/4">
           <button
             class="block w-full rounded-md bg-bordeaux px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
-            id="detailsButton" onclick="toggleDetails()">More</button>
+            id="detailsButton" onclick="toggleDetails()">Plus d'informations</button>
           
         </div>
       </div>
@@ -29,23 +29,23 @@
     <div class="py-2 mb-12 px-10  sm:px-16 ">
       <div class="flex flex-col justify-between items-center gap-4">
         
-        <h3 class="text-xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.artist_name }}</h3>
+        <h3 class="text-xl font-extrabold text-gray-900 sm:text-xl">Artiste : {{track_dict_list.0.Artiste }}</h3>
 
         <!--  Gauge chat  -->
         <canvas class="mt-12 mb-24" id="foo"></canvas>
-        <audio class="lg:-mb-12" id="myAudio" controls src="{{track_dict_list.0.preview_url }}"></audio>
+        <audio class="lg:-mb-12" id="myAudio" controls src="{{track_dict_list.0.Lien_Audio }}"></audio>
       </div>
       
     </div>
     <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
-      <img class="rounded-md " src="{{track_dict_list.0.image_url}}" alt="">
+      <img class="rounded-md " src="{{track_dict_list.0.Image}}" alt="">
     </div>
     <div id="detailsTable" class="col-span-3" style="display: none;">
       <table class="border-collapse w-full">
         <thead>
           <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th class="py-3 px-16 text-left">Variable Name</th>
-            <th class="py-3 px-6 text-left">Value</th>
+            <th class="py-3 px-16 text-left">Caractéristiques</th>
+            <th class="py-3 px-6 text-left">Valeurs</th>
           </tr>
         </thead>
         <tbody class="text-gray-600 text-sm font-light">
@@ -75,17 +75,17 @@
 
 
     <div class="flex-shrink-0">
-      <img class="h-48 w-full object-cover" src="{{item.image_url}}" alt="">
+      <img class="h-48 w-full object-cover" src="{{item.Image}}" alt="">
     </div>
     <div class="flex-1 bg-white p-2 flex flex-col justify-between rounded-lg">
       <div class="flex-1 ">
 
 
-        <h2 class="text-xl font-semibold text-gray-800">{{ item.track_name }}</h2>
-        <h3 class="text-xl mb-2 font-semibold text-gray-800">{{ item.artist_name }}</h3>
-        <span class="px-2 py-1 my-2 text-xs font-medium bg-teal-200 rounded-full">Popularity: {{ item.popularity }}</span>
+        <h2 class="text-xl font-semibold text-gray-800">{{ item.Titre }}</h2>
+        <h3 class="text-xl mb-2 font-semibold text-gray-800">{{ item.Artiste }}</h3>
+        <span class="px-2 py-1 my-2 text-xs font-medium bg-teal-200 rounded-full">Popularité : {{ item.Popularité }}</span>
         
-        <audio class="w-full absolute bottom-0 inset-x-0 mt-4 rounded-lg bg-gray-100 audio" controls src="{{item.preview_url }}"></audio>
+        <audio class="w-full absolute bottom-0 inset-x-0 mt-4 rounded-lg bg-gray-100 audio" controls src="{{item.Lien_Audio }}"></audio>
       
 
       </div>
@@ -172,10 +172,10 @@
     var detailsButton = document.getElementById("detailsButton");
     if (detailsTable.style.display === "none") {
       detailsTable.style.display = "table";
-      detailsButton.innerHTML = "Less";
+      detailsButton.innerHTML = "Moins d'informations";
     } else {
       detailsTable.style.display = "none";
-      detailsButton.innerHTML = "More";
+      detailsButton.innerHTML = "Plus d'informations";
     }
   }
 </script>

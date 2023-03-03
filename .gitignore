@@ -1,8 +1,7 @@
 # Cédric
 data-in/
 data-out/
-# manual_backup/
-# temp_backup/
+accounts.csv
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python

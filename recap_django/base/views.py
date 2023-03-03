@@ -162,7 +162,7 @@ def result(request):
                 "time_signature": track_dict["time_signature"],
                 "genre": Genre}
         
-        response_XGB = requests.post("https://fastapi-model1.onrender.com/predict/", json=data)
+        response_XGB = requests.post("http://api-groupe-sbec.francecentral.azurecontainer.io/predict/", json=data)
         pop_estimated = response_XGB.json()
 
         track_dataframe.rename({

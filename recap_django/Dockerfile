@@ -14,7 +14,7 @@ RUN pip install --upgrade pip && \
 
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
 
 # docker build -t django_recap .
 # docker run -p 8000:8000 django_recap 

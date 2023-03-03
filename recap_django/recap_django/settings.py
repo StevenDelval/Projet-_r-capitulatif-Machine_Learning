@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-2=p)b=1m)*@6&r5#bihf(w464ldc#1^@z)kpl731zrlxq1pa3(
 DEBUG = False
 
 
-ALLOWED_HOSTS = ["*"]
-# CSRF_TRUSTED_ORIGINS = [""]
+ALLOWED_HOSTS = ["0.0.0.0","51.11.205.197","django-sbec.dgg8fne4dzgpdjc5.francecentral.azurecontainer.io"]
+CSRF_TRUSTED_ORIGINS = ["http://django-sbec.dgg8fne4dzgpdjc5.francecentral.azurecontainer.io"]
 
 
 # Application definition

@@ -9,7 +9,7 @@ modelisation/models/XGBClassifier_genre.pkl
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
-
+staticfiles/
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/

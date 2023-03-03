@@ -205,7 +205,7 @@ def result(request):
         return render(request, 'result.html', {
             'track_dict_list': track_dict_list,
             'track_dataframe': track_dataframe,
-            'response_XGB' : (pop_estimated['pop']),
+            'response_XGB' : (round(float(pop_estimated['pop']))),
         })
     else:
         return render(request, 'result_with_no_text.html', {

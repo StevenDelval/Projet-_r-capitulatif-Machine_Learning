@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2=p)b=1m)*@6&r5#bihf(w464ldc#1^@z)kpl731zrlxq1pa3('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ["*"]
@@ -207,5 +207,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "base.User"
-
-CSRF_TRUSTED_ORIGINS = ['https://text-analysis-ia.herokuapp.com']

@@ -8,9 +8,9 @@
 
 Vous travaillez pour une entreprise spécialisée dans la réédition d'albums de musique légendaires au format vinyle. Le département marketing vous demande de répondre à la problématique suivante : "En se basant sur les caractéristiques musicales des morceaux, est-ce qu'un tube sorti dans les années 80 et qui est devenu un classique aurait connu le même succès s'il était sorti récemment ?"
 
-Pour répondre à la question, nous avons étudié le lien entre les caractéristiques musicales de morceaux sortis en 2022 et leur popularité actuelle.
+Pour répondre à la question, nous avons étudié le lien entre les caractéristiques musicales de morceaux sortis en 2022 et leur popularité actuelle (selon les informations de Spotify).
 
-Nous avons utilisé l'API de Spotify pour collecter des données et avons entraîné plusieurs modèles de Machine Learning.
+Nous avons utilisé la bibliothèque Spotipy afin d'interroger l'API de Spotify, et avons collecté des données pour entraîner deux modèles de Machine Learning : l'un pour la prédiction de genre, et l'autre pour la prédiction de popularité.
 
 Grâce à l'Application Web, les utilisateurs peuvent interroger le modèle sur n'importe quel morceau de l'histoire de la musique.
 

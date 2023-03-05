@@ -6,7 +6,7 @@
 
 ### Scénario du projet
 
-Vous travaillez pour une entreprise spécialisée dans la réédition d'albums de musique légendaires au format vinyle. Le département marketing vous demande de répondre à la question suivante : "En se basant sur les caractéristiques musicales des morceaux, est-ce qu'un tube sorti dans les années 80 et qui est devenu un classique aurait connu le même succès s'il était sorti récemment ?"
+Vous travaillez pour une entreprise spécialisée dans la réédition d'albums de musique légendaires au format vinyle. Le département marketing vous demande de répondre à la problématique suivante : "En se basant sur les caractéristiques musicales des morceaux, est-ce qu'un tube sorti dans les années 80 et qui est devenu un classique aurait connu le même succès s'il était sorti récemment ?"
 
 Pour répondre à la question, nous avons étudié le lien entre les caractéristiques musicales de morceaux sortis en 2022 et leur popularité actuelle.
 

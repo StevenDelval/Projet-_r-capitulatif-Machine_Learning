@@ -62,4 +62,4 @@ Nous avons déployé notre application sur Azure en utilisant Docker. Les fichie
 - [Wikipedia - Albums sortis en 2022](https://en.wikipedia.org/wiki/List_of_2022_albums_(January%E2%80%93June))
 
 ## Démo `render`
-!["Render-demo"](https://django-spotipy-test.onrender.com/)
+["Render-demo"](https://django-spotipy-test.onrender.com/)

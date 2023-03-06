@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2=p)b=1m)*@6&r5#bihf(w464ldc#1^@z)kpl731zrlxq1pa3('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS = ["*"]
-# CSRF_TRUSTED_ORIGINS = [""]
+ALLOWED_HOSTS = ["0.0.0.0","51.11.205.197","django-sbec.dgg8fne4dzgpdjc5.francecentral.azurecontainer.io"]
+CSRF_TRUSTED_ORIGINS = ["http://django-sbec.dgg8fne4dzgpdjc5.francecentral.azurecontainer.io"]
 
 
 # Application definition
@@ -159,7 +159,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-FR"
 
 TIME_ZONE = "UTC"
 
@@ -207,5 +207,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "base.User"
-
-CSRF_TRUSTED_ORIGINS = ['https://text-analysis-ia.herokuapp.com']

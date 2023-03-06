@@ -60,3 +60,6 @@ Nous avons déployé notre application sur Azure en utilisant Docker. Les fichie
 - [codepen](https://codepen.io/devparth/pen/dxpKKZ)
 - [Base de données MusicBrainz](https://musicbrainz.org/doc/MusicBrainz_Database)
 - [Wikipedia - Albums sortis en 2022](https://en.wikipedia.org/wiki/List_of_2022_albums_(January%E2%80%93June))
+
+## Démo `render`
+!["Render-demo"](https://django-spotipy-test.onrender.com/)
